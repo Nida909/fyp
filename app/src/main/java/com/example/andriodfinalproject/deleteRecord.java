@@ -23,8 +23,10 @@ public class deleteRecord extends AppCompatActivity {
     public void delbtn(View v)
     {
         db = dbHelper.getWritableDatabase();
+        Toast.makeText(deleteRecord.this,"You Selected  "+val1, Toast.LENGTH_LONG).show();
         Integer i1= db.delete(DatabaseContract.OrderT.TABLE_NAME, DatabaseContract.OrderT._ID+" = ?",new String[] {val1});
         if (i1 > 0) {
+            Toast.makeText(getApplicationContext(),"You Selected  as Country", Toast.LENGTH_LONG).show();
             Toast.makeText(this, i1+"  Records deleted: " , Toast.LENGTH_SHORT).show();
         }
         db.close();

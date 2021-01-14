@@ -58,7 +58,7 @@ public class CustomerHistory extends AppCompatActivity {
 
                     cr.moveToFirst();
                     str1 = cr.getString(0);
-                    history1 mObj = new history1("Milk Man Name: " + str1, "Milk Quantity : " + String.valueOf(quantity), "Order ID : " + String.valueOf(id), "Total Price : " + String.valueOf(price));
+                    history1 mObj = new history1("Milk Man Name: " + str1, "Milk Quantity : " + String.valueOf(quantity),  String.valueOf(id), "Total Price : " + String.valueOf(price));
                     customer.add(mObj);
                 }
 
@@ -71,6 +71,7 @@ public class CustomerHistory extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                     String ss=customer.get(position).getOrderNo();
+                    Toast.makeText(getApplicationContext(),"You Selected "+ss+ " as Country", Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(CustomerHistory.this,deleteRecord.class);
                     intent.putExtra("val",ss);
                     startActivity(intent);

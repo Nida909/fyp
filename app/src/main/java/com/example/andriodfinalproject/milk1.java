@@ -13,13 +13,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class history2 extends BaseAdapter {
-
+public class milk1 extends BaseAdapter {
     private Activity context;
-    ArrayList<history1> customer;
+    ArrayList<MilkMan> customer;
 
 
-    public history2(Activity context, ArrayList cust) {
+    public milk1(Activity context, ArrayList cust) {
         // super(context, R.layout.row_item, countries);
         this.context = context;
         this.customer=cust;
@@ -28,31 +27,32 @@ public class history2 extends BaseAdapter {
 
     public static class ViewHolder
     {
-        TextView txt1,txt2,txt3,txt4;
+        TextView textViewCapital;
+        TextView textViewCountry;
+        TextView tv;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row=convertView;
 
         LayoutInflater inflater = context.getLayoutInflater();
-       ViewHolder vh;
+        CustomerLists.ViewHolder vh;
         if(convertView==null) {
-            vh=new ViewHolder();
-            row = inflater.inflate(R.layout.activity_history2, null, true);
-            vh.txt1 = (TextView) row.findViewById(R.id.text1);
-            vh.txt2 = (TextView) row.findViewById(R.id.text2);
-            vh.txt3 = (TextView) row.findViewById(R.id.text3);
-            vh.txt4=(TextView) row.findViewById(R.id.text4);
+            vh=new CustomerLists.ViewHolder();
+            row = inflater.inflate(R.layout.activity_milk1, null, true);
+            vh.textViewCountry = (TextView) row.findViewById(R.id.textViewCountry);
+            vh.textViewCapital = (TextView) row.findViewById(R.id.textViewCapital);
+            vh.tv = (TextView) row.findViewById(R.id.ordertxt);
             // store the holder with the view.
             row.setTag(vh);
         }
         else {
-            vh = (ViewHolder) convertView.getTag();
+            vh = (CustomerLists.ViewHolder) convertView.getTag();
         }
-        vh.txt1.setText("Order ID :"+customer.get(position).getOrderNo());
-        vh.txt2.setText(""+customer.get(position).getName());
-        vh.txt3.setText(""+customer.get(position).getQuantity());
-        vh.txt4.setText(""+customer.get(position).getPrice());
+        vh.textViewCountry.setText(customer.get(position).getName());
+        vh.textViewCapital.setText(""+customer.get(position).getContact());
+        vh.tv.setText(""+customer.get(position).getOrderNo());
+        Log.d("Tag",customer.get(position).getContact());
         return  row;
     }
 

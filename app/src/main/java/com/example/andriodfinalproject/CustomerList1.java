@@ -21,7 +21,7 @@ public class CustomerList1 extends AppCompatActivity {
     SQLiteDatabase db;
     Activity activity;
     ArrayList<MilkMan> customer=new ArrayList<MilkMan>();
-    private ProgressDialog progressDialog;
+    //private ProgressDialog progressDialog;
     ListView listView;
     String str1,str2,str3,str4,str5;
     String num,first;

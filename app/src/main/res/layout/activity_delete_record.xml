@@ -20,7 +20,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete Order"
+        android:text="Cancel Order"
         android:layout_below="@id/btn1"
         android:layout_centerInParent="true"
         android:id="@+id/btn2"

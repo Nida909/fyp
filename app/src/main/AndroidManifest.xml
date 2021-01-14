@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndriodFinalProject">
-        <activity android:name=".CreateMAccount"></activity>
+        <activity android:name=".OrderPage"></activity>
+        <activity android:name=".MilkManDetails" />
+        <activity android:name=".milk1" />
+        <activity android:name=".orderget" />
+        <activity android:name=".CreateMAccount" />
         <activity android:name=".MilkManList" />
         <activity android:name=".AddMilkInfo" />
         <activity android:name=".LogInPage" />
